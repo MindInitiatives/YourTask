@@ -1,7 +1,9 @@
 package com.mindinitiatives.yourtask;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +20,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView signup;
@@ -29,10 +34,21 @@ public class MainActivity extends AppCompatActivity {
 
     private ProgressDialog mDialog;
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Tw-Cen-Medium.TTF")
+                .setFontAttrId(R.attr.fontPath)
+                .build());
+
+
         setContentView(R.layout.activity_main);
 
         mAuth= FirebaseAuth.getInstance();
@@ -48,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
         email=findViewById(R.id.email_login);
         pass=findViewById(R.id.password_login);
         btnLogIn=findViewById(R.id.login_btn);
+        TextView logintxt = findViewById(R.id.login_txt);
+        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/BrushScriptCondensedItalic.TTF");
+        logintxt.setTypeface(face);
 
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override

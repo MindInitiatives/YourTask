@@ -1,7 +1,9 @@
 package com.mindinitiatives.yourtask;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +19,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText email, pass;
@@ -27,13 +32,29 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
     @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Tw-Cen-Medium.TTF")
+                .setFontAttrId(R.attr.fontPath)
+                .build());
+
         setContentView(R.layout.activity_registration);
 
+        //Init Firebase
         mAuth=FirebaseAuth.getInstance();
 
         mDialog=new ProgressDialog(this);
+
+        TextView regtxt = findViewById(R.id.reg_txt);
+        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/BrushScriptCondensedItalic.TTF");
+        regtxt.setTypeface(face);
 
         email=findViewById(R.id.email_reg);
         pass=findViewById(R.id.password_reg);

@@ -19,46 +19,71 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/reg_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Registration"
-                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@android:color/white"
+                android:textSize="45sp"
                 android:gravity="center" />
 
             <EditText
-                android:id="@+id/email_reg"
-                android:hint="Email"
-                android:background="@drawable/edtdesign"
-                android:padding="10dp"
-                android:textColorHint="@android:color/white"
+                android:id="@+id/name_reg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:background="@drawable/edtdesign"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:hint="Username"
+                android:inputType="textPersonName"
+                android:textColorHint="#34495E"
+                android:padding="10dp"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/email_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/edtdesign"
+                android:drawableStart="@drawable/ic_mail_black_24dp"
+                android:drawableLeft="@drawable/ic_mail_black_24dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textColorHint="#34495E"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/password_reg"
+                android:drawableStart="@drawable/ic_lock_black_24dp"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
                 android:hint="Password"
                 android:background="@drawable/edtdesign"
                 android:padding="10dp"
-                android:textColorHint="@android:color/white"
+                android:textColorHint="#34495E"
+                android:textSize="20sp"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"/>
 
-            <Button
+            <info.hoang8f.widget.FButton
                 android:id="@+id/reg_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Register"
                 android:textColor="@android:color/white"
-                android:textAppearance="?android:textAppearanceMedium"/>
+                android:textSize="20sp"
+                app:fButtonColor="@color/fbutton_color_wet_asphalt" />
 
             <TextView
                 android:id="@+id/login_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="20sp"
                 android:text="Already have an Account? Log in here"
                 android:textColor="@android:color/white"
                 android:gravity="center"
