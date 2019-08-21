@@ -1,6 +1,6 @@
 # YourTask
 
-![YourTaskLogo](https://github.com/MindInitiatives/YourTask/blob/master/app/src/main/res/drawable-hdpi/task_icon.png)
+![YourTaskLogo](https://github.com/MindInitiatives/YourTask/blob/master/app/src/main/res/drawable-mdpi/task_icon.png)
 
 Office Task Management App
 
