@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <ScrollView
@@ -39,6 +40,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Title"
+                        android:textColor="#34495E"
                         android:textAppearance="?android:textAppearanceMedium" />
 
                 </RelativeLayout>
@@ -53,7 +55,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@color/fbutton_color_wet_asphalt" />
 
                 </RelativeLayout>
 
@@ -75,6 +77,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Note"
+                        android:textColor="#34495E"
                         android:textAppearance="?android:textAppearanceMedium" />
 
                 </RelativeLayout>
@@ -89,20 +92,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@color/fbutton_color_wet_asphalt" />
 
                 </RelativeLayout>
 
 
             </LinearLayout>
 
-            <Button
+            <info.hoang8f.widget.FButton
                 android:id="@+id/btn_save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="save"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:fButtonColor="@color/fbutton_color_wet_asphalt" />
+
 
         </LinearLayout>
 
